@@ -1,1 +1,275 @@
-<p>home works!</p>,
+<div class="min-h-screen bg-zinc-950 text-zinc-100 flex">
+
+  <!-- Sidebar -->
+  <aside class="w-72 bg-zinc-900 border-r border-zinc-800 flex flex-col">
+    
+    <!-- Logo -->
+    <div class="h-20 flex items-center px-8 border-b border-zinc-800">
+      <div class="w-11 h-11 rounded-2xl bg-violet-600 flex items-center justify-center font-bold text-lg shadow-lg shadow-violet-600/30">
+        V
+      </div>
+
+      <div class="ml-4">
+        <h1 class="text-lg font-semibold tracking-wide">VisionPanel</h1>
+        <p class="text-zinc-500 text-sm">Dashboard System</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 px-5 py-8 space-y-2">
+
+      <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-2xl bg-violet-600 text-white shadow-lg shadow-violet-600/20">
+        <span>🏠</span>
+        <span class="font-medium">Dashboard</span>
+      </a>
+
+      <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-2xl text-zinc-400 hover:bg-zinc-800 hover:text-white transition">
+        <span>📊</span>
+        <span>Analytics</span>
+      </a>
+
+      <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-2xl text-zinc-400 hover:bg-zinc-800 hover:text-white transition">
+        <span>💳</span>
+        <span>Payments</span>
+      </a>
+
+      <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-2xl text-zinc-400 hover:bg-zinc-800 hover:text-white transition">
+        <span>📁</span>
+        <span>Projects</span>
+      </a>
+
+      <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-2xl text-zinc-400 hover:bg-zinc-800 hover:text-white transition">
+        <span>⚙️</span>
+        <span>Settings</span>
+      </a>
+
+    </nav>
+
+    <!-- Profile -->
+    <div class="p-5 border-t border-zinc-800">
+      <div class="bg-zinc-800 rounded-2xl p-4 flex items-center gap-4">
+        <img 
+          src="https://i.pravatar.cc/100" 
+          class="w-12 h-12 rounded-xl object-cover"
+        />
+
+        <div>
+          <h3 class="font-medium">Juan Valentin</h3>
+          <p class="text-zinc-400 text-sm">Frontend Developer</p>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- Main -->
+  <main class="flex-1 overflow-hidden">
+
+    <!-- Topbar -->
+    <header class="h-20 border-b border-zinc-800 bg-zinc-950/70 backdrop-blur-xl px-10 flex items-center justify-between">
+
+      <div>
+        <h2 class="text-2xl font-bold">Dashboard</h2>
+        <p class="text-zinc-500 text-sm">
+          Welcome back, your analytics are updated.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-5">
+
+        <!-- Search -->
+        <div class="hidden md:flex items-center bg-zinc-900 border border-zinc-800 rounded-2xl px-4 h-12 w-80">
+          <span class="text-zinc-500 mr-3">🔍</span>
+
+          <input
+            type="text"
+            placeholder="Search..."
+            class="bg-transparent outline-none w-full text-sm placeholder:text-zinc-500"
+          />
+        </div>
+
+        <!-- Notification -->
+        <button class="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-violet-500 transition flex items-center justify-center">
+          🔔
+        </button>
+
+      </div>
+
+    </header>
+
+    <!-- Content -->
+    <section class="p-10 space-y-8 overflow-y-auto h-[calc(100vh-80px)]">
+
+      <!-- Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+        <!-- Card -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 hover:border-violet-500/50 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-zinc-400 text-sm">Revenue</span>
+            <span class="text-green-400 text-sm font-medium">+12%</span>
+          </div>
+
+          <h3 class="text-4xl font-bold mt-4">$48,920</h3>
+
+          <div class="mt-6 h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="w-3/4 h-full bg-violet-500 rounded-full"></div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 hover:border-cyan-500/50 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-zinc-400 text-sm">Users</span>
+            <span class="text-cyan-400 text-sm font-medium">+8%</span>
+          </div>
+
+          <h3 class="text-4xl font-bold mt-4">12.4K</h3>
+
+          <div class="mt-6 h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="w-2/3 h-full bg-cyan-500 rounded-full"></div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 hover:border-pink-500/50 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-zinc-400 text-sm">Orders</span>
+            <span class="text-pink-400 text-sm font-medium">+19%</span>
+          </div>
+
+          <h3 class="text-4xl font-bold mt-4">1,842</h3>
+
+          <div class="mt-6 h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="w-4/5 h-full bg-pink-500 rounded-full"></div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 hover:border-amber-500/50 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-zinc-400 text-sm">Growth</span>
+            <span class="text-amber-400 text-sm font-medium">+24%</span>
+          </div>
+
+          <h3 class="text-4xl font-bold mt-4">87%</h3>
+
+          <div class="mt-6 h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="w-5/6 h-full bg-amber-500 rounded-full"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Main Grid -->
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+
+        <!-- Chart Area -->
+        <div class="xl:col-span-2 bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+
+          <div class="flex items-center justify-between mb-8">
+            <div>
+              <h3 class="text-xl font-semibold">Performance</h3>
+              <p class="text-zinc-500 text-sm mt-1">
+                Monthly activity overview
+              </p>
+            </div>
+
+            <button class="px-5 h-11 rounded-2xl bg-violet-600 hover:bg-violet-500 transition font-medium shadow-lg shadow-violet-600/20">
+              Download
+            </button>
+          </div>
+
+          <!-- Fake Chart -->
+          <div class="h-80 flex items-end gap-4">
+
+            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[35%] relative overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-violet-500 h-[80%] rounded-t-3xl"></div>
+            </div>
+
+            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[55%] relative overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-violet-500 h-[90%] rounded-t-3xl"></div>
+            </div>
+
+            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[75%] relative overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-violet-500 h-[92%] rounded-t-3xl"></div>
+            </div>
+
+            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[45%] relative overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-violet-500 h-[85%] rounded-t-3xl"></div>
+            </div>
+
+            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[90%] relative overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-violet-500 h-[95%] rounded-t-3xl"></div>
+            </div>
+
+            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[65%] relative overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-violet-500 h-[88%] rounded-t-3xl"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Activity -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold">Recent Activity</h3>
+            <p class="text-zinc-500 text-sm mt-1">
+              Last updates from your team
+            </p>
+          </div>
+
+          <div class="space-y-6">
+
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-violet-500/20 flex items-center justify-center">
+                🚀
+              </div>
+
+              <div>
+                <h4 class="font-medium">New deployment</h4>
+                <p class="text-zinc-500 text-sm">
+                  Production updated successfully
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 flex items-center justify-center">
+                👥
+              </div>
+
+              <div>
+                <h4 class="font-medium">New users registered</h4>
+                <p class="text-zinc-500 text-sm">
+                  120 users joined today
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-pink-500/20 flex items-center justify-center">
+                💳
+              </div>
+
+              <div>
+                <h4 class="font-medium">Payment processed</h4>
+                <p class="text-zinc-500 text-sm">
+                  Subscription payment received
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
