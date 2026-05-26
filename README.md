@@ -10,26 +10,10 @@
 
 ## 📸 Preview
 
-Agrega aquí screenshots o gifs del proyecto.
-
-```bash
-/assets/preview.png
-```
+Tienditaaaa.
 
 ---
 
-# ✨ Características
-
-- ✅ Diseño moderno y responsive
-- ✅ Arquitectura modular
-- ✅ Componentes reutilizables
-- ✅ Consumo de APIs
-- ✅ Lazy Loading
-- ✅ Manejo de rutas
-- ✅ Formularios reactivos
-- ✅ Buenas prácticas Angular 21
-
----
 
 # 🛠️ Tecnologías Utilizadas
 
