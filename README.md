@@ -1,6 +1,6 @@
-# 🚀 Nombre del Proyecto
+# 🚀 TIENDITAAAAA
 
-> Breve descripción del proyecto.
+> Tienditaaa
 
 ![Angular](https://img.shields.io/badge/Angular-21-red?style=for-the-badge&logo=angular)
 ![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=for-the-badge&logo=typescript)
