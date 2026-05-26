@@ -1,59 +1,153 @@
-# Tiendita
+# 🚀 Nombre del Proyecto
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+> Breve descripción del proyecto.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-21-red?style=for-the-badge&logo=angular)
+![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=for-the-badge&logo=typescript)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38BDF8?style=for-the-badge&logo=tailwind-css)
 
-To start a local development server, run:
+---
+
+## 📸 Preview
+
+Agrega aquí screenshots o gifs del proyecto.
+
+```bash
+/assets/preview.png
+```
+
+---
+
+# ✨ Características
+
+- ✅ Diseño moderno y responsive
+- ✅ Arquitectura modular
+- ✅ Componentes reutilizables
+- ✅ Consumo de APIs
+- ✅ Lazy Loading
+- ✅ Manejo de rutas
+- ✅ Formularios reactivos
+- ✅ Buenas prácticas Angular 21
+
+---
+
+# 🛠️ Tecnologías Utilizadas
+
+## Frontend
+- Angular 21
+- TypeScript
+- TailwindCSS / Bootstrap
+
+## Herramientas
+- Git
+- GitHub
+- VSCode
+
+---
+
+
+# ⚙️ Instalación
+
+## 1️⃣ Clonar el repositorio
+
+```bash
+git clone https://github.com/juan-valentin-g/storess.git
+```
+
+## 2️⃣ Entrar al proyecto
+
+```bash
+cd nombre-del-proyecto
+```
+
+## 3️⃣ Instalar dependencias
+
+```bash
+npm install
+```
+
+## 4️⃣ Levantar servidor de desarrollo
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Abrir en el navegador:
 
 ```bash
-ng generate component component-name
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+# 🚀 Build de Producción
 
 ```bash
-ng generate --help
+ng build --configuration production
 ```
 
-## Building
+---
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+# 🧪 Testing
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+# 📦 Deployment
+
+Puedes desplegar el proyecto en:
+
+- Vercel
+- Netlify
+- Firebase Hosting
+- GitHub Pages
+
+---
+
+# 👨‍💻 Autor
+
+## Tu Nombre
+
+- GitHub: https://github.com/TUUSUARIO
+- LinkedIn: https://linkedin.com/in/TUPERFIL
+
+---
+
+# ⭐ Contribuciones
+
+Las contribuciones son bienvenidas.
+
+1. Fork del proyecto
+2. Crear rama
 
 ```bash
-ng e2e
+git checkout -b feature/nueva-funcionalidad
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+3. Commit de cambios
 
-## Additional Resources
+```bash
+git commit -m "Nueva funcionalidad"
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4. Push a la rama
+
+```bash
+git push origin feature/nueva-funcionalidad
+```
+
+5. Abrir Pull Request
+
+---
+
+# 📄 Licencia
+
+Este proyecto está bajo la licencia MIT.
+
+---
+
+# 📌 Estado del Proyecto
+
+🚧 En desarrollo
