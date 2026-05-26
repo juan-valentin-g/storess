@@ -1,181 +1,146 @@
-<h1>Cambios desde Remoto</h1>
-<div class="min-h-screen bg-zinc-950 text-zinc-100 flex">
+<!-- PRODUCTS SECTION -->
+<div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 mt-6">
 
-  <!-- Sidebar -->
-  <aside class="w-72 bg-zinc-900 border-r border-zinc-800 flex flex-col">
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h3 class="text-2xl font-semibold">Products</h3>
+      <p class="text-zinc-500 text-sm">
+        Manage your store products
+      </p>
+    </div>
+
+    <button class="px-5 h-11 rounded-2xl bg-violet-600 hover:bg-violet-500 transition font-medium shadow-lg shadow-violet-600/20">
+      + Add Product
+    </button>
+  </div>
+
+  <div class="overflow-x-auto">
     
-    <!-- Logo -->
-    <div class="h-20 flex items-center px-8 border-b border-zinc-800">
-      <div class="w-11 h-11 rounded-2xl bg-violet-600 flex items-center justify-center font-bold text-lg shadow-lg shadow-violet-600/30">
-        V
-      </div>
+    <table class="w-full border-collapse">
 
-      <div class="ml-4">
-        <h1 class="text-lg font-semibold tracking-wide">Panel</h1>
-        <p class="text-zinc-500 text-sm">Dashboard System</p>
-      </div>
-    </div>
+      <thead>
+        <tr class="border-b border-zinc-800 text-zinc-400 text-left">
+          <th class="py-4 px-4">Product</th>
+          <th class="py-4 px-4">Category</th>
+          <th class="py-4 px-4">Price</th>
+          <th class="py-4 px-4">Stock</th>
+          <th class="py-4 px-4 text-center">Status</th>
+          <th class="py-4 px-4 text-center">Actions</th>
+        </tr>
+      </thead>
 
-    <!-- Navigation -->
-    <nav class="flex-1 px-5 py-8 space-y-2">
+      <tbody>
 
-      <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-2xl bg-violet-600 text-white shadow-lg shadow-violet-600/20">
-        <span>🏠</span>
-        <span class="font-medium">Dashboard commommmmmmm</span>
-      </a>
+        <!-- Product -->
+        <tr class="border-b border-zinc-800 hover:bg-zinc-800/40 transition">
+          
+          <td class="py-4 px-4">
+            <div class="flex items-center gap-4">
+              
+              <img 
+                src="https://via.placeholder.com/60"
+                class="w-14 h-14 rounded-2xl object-cover"
+              />
 
-      <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-2xl text-zinc-400 hover:bg-zinc-800 hover:text-white transition">
-        <span>💳</span>
-        <span>Payments</span>
-      </a>
+              <div>
+                <h4 class="font-medium">Laptop Gamer</h4>
+                <p class="text-zinc-500 text-sm">ASUS ROG</p>
+              </div>
 
-
-
-    </nav>
-
-    <!-- Profile -->
-    <div class="p-5 border-t border-zinc-800">
-      <div class="bg-zinc-800 rounded-2xl p-4 flex items-center gap-4">
-        <img 
-          src="https://i.pravatar.cc/100" 
-          class="w-12 h-12 rounded-xl object-cover"
-        />
-
-        <div>
-          <h3 class="font-medium">Juan Valentin</h3>
-          <p class="text-zinc-400 text-sm">Frontend Developer</p>
-        </div>
-      </div>
-    </div>
-
-  </aside>
-
-  <!-- Main -->
-  <main class="flex-1 overflow-hidden">
-
-    <!-- Topbar -->
-    <header class="h-20 border-b border-zinc-800 bg-zinc-950/70 backdrop-blur-xl px-10 flex items-center justify-between">
-
-      <div>
-        <h2 class="text-2xl font-bold">Dashboard</h2>
-        <p class="text-zinc-500 text-sm">
-          Welcome back, your analytics are updated.
-        </p>
-      </div>
-
-      <div class="flex items-center gap-5">
-
-        <!-- Search -->
-        <div class="hidden md:flex items-center bg-zinc-900 border border-zinc-800 rounded-2xl px-4 h-12 w-80">
-          <span class="text-zinc-500 mr-3">🔍</span>
-
-          <input
-            type="text"
-            placeholder="Search..."
-            class="bg-transparent outline-none w-full text-sm placeholder:text-zinc-500"
-          />
-        </div>
-
-        <!-- Notification -->
-        <button class="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-violet-500 transition flex items-center justify-center">
-          🔔
-        </button>
-
-      </div>
-
-    </header>
-
-    <!-- Content -->
-    <section class="p-10 space-y-8 overflow-y-auto h-[calc(100vh-80px)]">
-
-      <!-- Stats -->
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-
-
-        <!-- Card -->
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 hover:border-pink-500/50 transition">
-          <div class="flex items-center justify-between">
-            <span class="text-zinc-400 text-sm">Orders</span>
-            <span class="text-pink-400 text-sm font-medium">+19%</span>
-          </div>
-
-          <h3 class="text-4xl font-bold mt-4">1,842</h3>
-
-          <div class="mt-6 h-2 bg-zinc-800 rounded-full overflow-hidden">
-            <div class="w-4/5 h-full bg-pink-500 rounded-full"></div>
-          </div>
-        </div>
-
-        <!-- Card -->
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 hover:border-amber-500/50 transition">
-          <div class="flex items-center justify-between">
-            <span class="text-zinc-400 text-sm">Growth</span>
-            <span class="text-amber-400 text-sm font-medium">+24%</span>
-          </div>
-
-          <h3 class="text-4xl font-bold mt-4">87%</h3>
-
-          <div class="mt-6 h-2 bg-zinc-800 rounded-full overflow-hidden">
-            <div class="w-5/6 h-full bg-amber-500 rounded-full"></div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Main Grid -->
-      <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
-
-        <!-- Chart Area -->
-        <div class="xl:col-span-2 bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
-
-          <div class="flex items-center justify-between mb-8">
-            <div>
-              <h3 class="text-xl font-semibold">Performance</h3>
-              <p class="text-zinc-500 text-sm mt-1">
-                Monthly activity overview
-              </p>
             </div>
+          </td>
 
-            <button class="px-5 h-11 rounded-2xl bg-violet-600 hover:bg-violet-500 transition font-medium shadow-lg shadow-violet-600/20">
-              Download
-            </button>
-          </div>
+          <td class="py-4 px-4 text-zinc-300">
+            Electronics
+          </td>
 
-          <!-- Fake Chart -->
-          <div class="h-80 flex items-end gap-4">
+          <td class="py-4 px-4 font-semibold">
+            $24,999
+          </td>
 
-            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[35%] relative overflow-hidden">
-              <div class="absolute bottom-0 w-full bg-violet-500 h-[80%] rounded-t-3xl"></div>
+          <td class="py-4 px-4">
+            12
+          </td>
+
+          <td class="py-4 px-4 text-center">
+            <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">
+              Available
+            </span>
+          </td>
+
+          <td class="py-4 px-4">
+            <div class="flex justify-center gap-3">
+              
+              <button class="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 transition text-sm">
+                Edit
+              </button>
+
+              <button class="px-4 py-2 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-400 transition text-sm">
+                Delete
+              </button>
+
             </div>
+          </td>
 
-            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[55%] relative overflow-hidden">
-              <div class="absolute bottom-0 w-full bg-violet-500 h-[90%] rounded-t-3xl"></div>
+        </tr>
+
+        <!-- Product -->
+        <tr class="border-b border-zinc-800 hover:bg-zinc-800/40 transition">
+          
+          <td class="py-4 px-4">
+            <div class="flex items-center gap-4">
+              
+              <img 
+                src="https://via.placeholder.com/60"
+                class="w-14 h-14 rounded-2xl object-cover"
+              />
+
+              <div>
+                <h4 class="font-medium">Mechanical Keyboard</h4>
+                <p class="text-zinc-500 text-sm">Redragon</p>
+              </div>
+
             </div>
+          </td>
 
-            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[75%] relative overflow-hidden">
-              <div class="absolute bottom-0 w-full bg-violet-500 h-[92%] rounded-t-3xl"></div>
+          <td class="py-4 px-4 text-zinc-300">
+            Accessories
+          </td>
+
+          <td class="py-4 px-4 font-semibold">
+            $1,499
+          </td>
+
+          <td class="py-4 px-4">
+            4
+          </td>
+
+          <td class="py-4 px-4 text-center">
+            <span class="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-sm">
+              Low Stock
+            </span>
+          </td>
+
+          <td class="py-4 px-4">
+            <div class="flex justify-center gap-3">
+              
+              <button class="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 transition text-sm">
+                Edit
+              </button>
+
+              <button class="px-4 py-2 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-400 transition text-sm">
+                Delete
+              </button>
+
             </div>
+          </td>
 
-            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[45%] relative overflow-hidden">
-              <div class="absolute bottom-0 w-full bg-violet-500 h-[85%] rounded-t-3xl"></div>
-            </div>
+        </tr>
 
-            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[90%] relative overflow-hidden">
-              <div class="absolute bottom-0 w-full bg-violet-500 h-[95%] rounded-t-3xl"></div>
-            </div>
+      </tbody>
 
-            <div class="flex-1 bg-violet-500/20 rounded-t-3xl h-[65%] relative overflow-hidden">
-              <div class="absolute bottom-0 w-full bg-violet-500 h-[88%] rounded-t-3xl"></div>
-            </div>
+    </table>
 
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
+  </div>
 
 </div>
