@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-products',
-  imports: [],
+  imports: [  FormsModule],
   templateUrl: './products.html',
   styles: `
     :host {
@@ -11,4 +11,50 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Products {}
+export class Products {
+
+   mostrarModal = false;
+
+  productos = [
+    {
+      nombre: 'Laptop Gamer',
+      marca: 'ASUS ROG',
+      categoria: 'Electrónica',
+      precio: 24999,
+      stock: 12
+    }
+  ];
+
+  nuevoProducto = {
+    nombre: '',
+    marca: '',
+    categoria: '',
+    precio: 0,
+    stock: 0
+  };
+
+  abrirModal() {
+    this.mostrarModal = true;
+  }
+
+  cerrarModal() {
+    this.mostrarModal = false;
+  }
+
+  guardarProducto() {
+
+    this.productos.push({
+      ...this.nuevoProducto
+    });
+
+    this.nuevoProducto = {
+      nombre: '',
+      marca: '',
+      categoria: '',
+      precio: 0,
+      stock: 0
+    };
+
+    this.cerrarModal();
+  }
+}
