@@ -9,6 +9,7 @@
 
   <!-- Fuente -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
@@ -25,21 +26,24 @@
   <div class="max-w-6xl mx-auto">
 
     <!-- HEADER -->
-    <div class="flex items-center justify-between mb-8">
+    <div class="flex items-center justify-between mb-10">
 
       <div>
+
         <h1 class="text-4xl font-bold text-white tracking-tight">
           Inventario
         </h1>
 
-        <p class="text-zinc-400 mt-1">
+        <p class="text-zinc-400 mt-2">
           Gestión de productos
         </p>
+
       </div>
 
+      <!-- BOTON -->
       <button
         (click)="abrirModal()"
-        class="bg-violet-600 hover:bg-violet-700 transition-all duration-300 text-white px-5 py-3 rounded-2xl shadow-lg shadow-violet-900/40"
+        class="bg-fuchsia-600 hover:bg-fuchsia-700 hover:scale-[1.02] transition-all duration-300 text-white px-6 py-3 rounded-2xl shadow-lg shadow-fuchsia-900/40 font-medium"
       >
         + Nuevo Producto
       </button>
@@ -47,12 +51,13 @@
     </div>
 
     <!-- TABLA -->
-    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
+    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl shadow-black/30">
 
       <div class="overflow-x-auto">
 
         <table class="w-full">
 
+          <!-- HEAD -->
           <thead class="bg-zinc-950">
 
             <tr class="text-zinc-400 text-sm">
@@ -85,6 +90,7 @@
 
           </thead>
 
+          <!-- BODY -->
           <tbody>
 
             <tr
@@ -138,14 +144,14 @@
 
                 <span
                   *ngIf="producto.stock > 0"
-                  class="bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm"
+                  class="bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm border border-emerald-500/20"
                 >
                   Disponible
                 </span>
 
                 <span
                   *ngIf="producto.stock <= 0"
-                  class="bg-red-500/10 text-red-400 px-4 py-2 rounded-full text-sm"
+                  class="bg-red-500/10 text-red-400 px-4 py-2 rounded-full text-sm border border-red-500/20"
                 >
                   Agotado
                 </span>
@@ -158,13 +164,13 @@
                 <div class="flex justify-center gap-3">
 
                   <button
-                    class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 px-4 py-2 rounded-xl transition"
+                    class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 px-4 py-2 rounded-xl transition-all duration-300"
                   >
                     Editar
                   </button>
 
                   <button
-                    class="bg-red-500/10 hover:bg-red-500/20 text-red-400 px-4 py-2 rounded-xl transition"
+                    class="bg-red-500/10 hover:bg-red-500/20 text-red-400 px-4 py-2 rounded-xl transition-all duration-300"
                   >
                     Eliminar
                   </button>
@@ -188,10 +194,13 @@
   <!-- MODAL -->
   <div
     *ngIf="mostrarModal"
-    class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+    class="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 z-50"
   >
 
-    <div class="bg-zinc-900 border border-zinc-800 w-full max-w-lg rounded-3xl p-8">
+    <!-- CONTENIDO -->
+    <div
+      class="bg-zinc-900 border border-zinc-800 w-full max-w-lg rounded-3xl p-8 shadow-2xl shadow-black/50 animate-[fadeIn_.25s_ease]"
+    >
 
       <!-- HEADER -->
       <div class="flex items-center justify-between mb-8">
@@ -208,9 +217,10 @@
 
         </div>
 
+        <!-- CERRAR -->
         <button
           (click)="cerrarModal()"
-          class="text-zinc-500 hover:text-white text-2xl transition"
+          class="text-zinc-500 hover:text-white text-2xl transition-all duration-300"
         >
           ✕
         </button>
@@ -218,7 +228,7 @@
       </div>
 
       <!-- FORM -->
-      <form #formProducto="ngForm" (ngSubmit)="guardarProducto()">
+      <form #formProducto="ngForm">
 
         <div class="space-y-5">
 
@@ -237,7 +247,7 @@
               minlength="3"
               #nombre="ngModel"
               placeholder="Ejemplo: Laptop Gamer"
-              class="w-full bg-zinc-950 border border-zinc-700 text-white p-4 rounded-2xl outline-none focus:border-violet-500 transition"
+              class="w-full bg-zinc-950 border border-zinc-800 text-white p-4 rounded-2xl outline-none focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-500/40 transition-all duration-300"
             />
 
             <p
@@ -263,7 +273,7 @@
               required
               #marca="ngModel"
               placeholder="Ejemplo: ASUS"
-              class="w-full bg-zinc-950 border border-zinc-700 text-white p-4 rounded-2xl outline-none focus:border-violet-500 transition"
+              class="w-full bg-zinc-950 border border-zinc-800 text-white p-4 rounded-2xl outline-none focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-500/40 transition-all duration-300"
             />
 
             <p
@@ -289,7 +299,7 @@
               required
               #categoria="ngModel"
               placeholder="Ejemplo: Electrónica"
-              class="w-full bg-zinc-950 border border-zinc-700 text-white p-4 rounded-2xl outline-none focus:border-violet-500 transition"
+              class="w-full bg-zinc-950 border border-zinc-800 text-white p-4 rounded-2xl outline-none focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-500/40 transition-all duration-300"
             />
 
           </div>
@@ -312,7 +322,7 @@
                 min="1"
                 #precio="ngModel"
                 placeholder="$0"
-                class="w-full bg-zinc-950 border border-zinc-700 text-white p-4 rounded-2xl outline-none focus:border-violet-500 transition"
+                class="w-full bg-zinc-950 border border-zinc-800 text-white p-4 rounded-2xl outline-none focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-500/40 transition-all duration-300"
               />
 
               <p
@@ -339,7 +349,7 @@
                 min="0"
                 #stock="ngModel"
                 placeholder="0"
-                class="w-full bg-zinc-950 border border-zinc-700 text-white p-4 rounded-2xl outline-none focus:border-violet-500 transition"
+                class="w-full bg-zinc-950 border border-zinc-800 text-white p-4 rounded-2xl outline-none focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-500/40 transition-all duration-300"
               />
 
             </div>
@@ -350,7 +360,7 @@
           <button
             type="submit"
             [disabled]="formProducto.invalid"
-            class="w-full bg-violet-600 hover:bg-violet-700 disabled:bg-zinc-700 disabled:cursor-not-allowed transition-all duration-300 text-white py-4 rounded-2xl font-semibold mt-4"
+            class="w-full bg-fuchsia-600 hover:bg-fuchsia-700 hover:scale-[1.01] disabled:bg-zinc-700 disabled:cursor-not-allowed transition-all duration-300 text-white py-4 rounded-2xl font-semibold mt-4"
           >
             Guardar Producto
           </button>

@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-products',
-  imports: [  FormsModule],
+  imports: [FormsModule],
   templateUrl: './products.html',
   styles: `
     :host {
@@ -13,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class Products {
 
-   mostrarModal = false;
+  mostrarModal = false;
 
   productos = [
     {
@@ -25,14 +26,6 @@ export class Products {
     }
   ];
 
-  nuevoProducto = {
-    nombre: '',
-    marca: '',
-    categoria: '',
-    precio: 0,
-    stock: 0
-  };
-
   abrirModal() {
     this.mostrarModal = true;
   }
@@ -41,20 +34,4 @@ export class Products {
     this.mostrarModal = false;
   }
 
-  guardarProducto() {
-
-    this.productos.push({
-      ...this.nuevoProducto
-    });
-
-    this.nuevoProducto = {
-      nombre: '',
-      marca: '',
-      categoria: '',
-      precio: 0,
-      stock: 0
-    };
-
-    this.cerrarModal();
-  }
 }
