@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <title>Productos</title>
+</head>
+
+<body
+  class="bg-zinc-950 min-h-screen p-8"
+  style="font-family: 'Inter', sans-serif;"
+>
+
+  <div class="max-w-6xl mx-auto">
+
+    <!-- HEADER -->
+    <div class="flex items-center justify-between mb-8">
+
+      <div>
+        <h1 class="text-4xl font-bold text-white tracking-tight">
+          Inventario
+        </h1>
+
+        <p class="text-zinc-400 mt-1">
+          Gestión de productos
+        </p>
+      </div>
+
+      <button
+        (click)="abrirModal()"
+        class="bg-violet-600 hover:bg-violet-700 transition-all duration-300 text-white px-5 py-3 rounded-2xl shadow-lg shadow-violet-900/40"
+      >
+        + Nuevo Producto
+      </button>
+
+    </div>
+
+    <!-- TABLA -->
+    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
+
+      <div class="overflow-x-auto">
+
+        <table class="w-full">
+
+          <thead class="bg-zinc-950">
+
+            <tr class="text-zinc-400 text-sm">
+
+              <th class="text-left py-5 px-6 font-medium">
+                Producto
+              </th>
+
+              <th class="text-left py-5 px-6 font-medium">
+                Categoría
+              </th>
+
+              <th class="text-left py-5 px-6 font-medium">
+                Precio
+              </th>
+
+              <th class="text-left py-5 px-6 font-medium">
+                Stock
+              </th>
+
+              <th class="text-center py-5 px-6 font-medium">
+                Estado
+              </th>
+
+              <th class="text-center py-5 px-6 font-medium">
+                Acciones
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr
+              *ngFor="let producto of productos"
+              class="border-t border-zinc-800 hover:bg-zinc-800/40 transition-all duration-300"
+            >
+
+              <!-- PRODUCTO -->
+              <td class="py-5 px-6">
+
+                <div class="flex items-center gap-4">
+
+                  <img
+                    src="https://via.placeholder.com/50"
+                    class="w-14 h-14 rounded-2xl object-cover border border-zinc-700"
+                  />
+
+                  <div>
+
+                    <p class="text-white font-semibold">
+                      {{ producto.nombre }}
+                    </p>
+
+                    <p class="text-sm text-zinc-400 mt-1">
+                      {{ producto.marca }}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </td>
+
+              <!-- CATEGORIA -->
+              <td class="py-5 px-6 text-zinc-300">
+                {{ producto.categoria }}
+              </td>
+
+              <!-- PRECIO -->
+              <td class="py-5 px-6 text-white font-semibold">
+                ${{ producto.precio }}
+              </td>
+
+              <!-- STOCK -->
+              <td class="py-5 px-6 text-zinc-300">
+                {{ producto.stock }}
+              </td>
+
+              <!-- ESTADO -->
+              <td class="py-5 px-6 text-center">
+
+                <span
+                  *ngIf="producto.stock > 0"
+                  class="bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm"
+                >
+                  Disponible
+                </span>
+
+                <span
+                  *ngIf="producto.stock <= 0"
+                  class="bg-red-500/10 text-red-400 px-4 py-2 rounded-full text-sm"
+                >
+                  Agotado
+                </span>
+
+              </td>
+
+              <!-- BOTONES -->
+              <td class="py-5 px-6">
+
+                <div class="flex justify-center gap-3">
+
+                  <button
+                    class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 px-4 py-2 rounded-xl transition"
+                  >
+                    Editar
+                  </button>
+
+                  <button
+                    class="bg-red-500/10 hover:bg-red-500/20 text-red-400 px-4 py-2 rounded-xl transition"
+                  >
+                    Eliminar
+                  </button>
+
+                </div>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div
+    *ngIf="mostrarModal"
+    class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+  >
+
+    <div class="bg-zinc-900 border border-zinc-800 w-full max-w-lg rounded-3xl p-8">
+
+      <!-- HEADER -->
+      <div class="flex items-center justify-between mb-8">
+
+        <div>
+
+          <h2 class="text-3xl font-bold text-white">
+            Nuevo Producto
+          </h2>
+
+          <p class="text-zinc-400 mt-1">
+            Agrega información del producto
+          </p>
+
+        </div>
+
+        <button
+          (click)="cerrarModal()"
+          class="text-zinc-500 hover:text-white text-2xl transition"
+        >
+          ✕
+        </button>
+
+      </div>
+
+      <!-- FORM -->
+      <form #formProducto="ngForm" (ngSubmit)="guardarProducto()">
+
+        <div class="space-y-5">
+
+          <!-- NOMBRE -->
+          <div>
+
+            <label class="text-sm text-zinc-400 mb-2 block">
+              Nombre
+            </label>
+
+            <input
+              type="text"
+              [(ngModel)]="nuevoProducto.nombre"
+              name="nombre"
+              required
+              minlength="3"
+              #nombre="ngModel"
+              placeholder="Ejemplo: Laptop Gamer"
+              class="w-full bg-zinc-950 border border-zinc-700 text-white p-4 rounded-2xl outline-none focus:border-violet-500 transition"
+            />
+
+            <p
+              *ngIf="nombre.invalid && nombre.touched"
+              class="text-red-400 text-sm mt-2"
+            >
+              El nombre debe tener mínimo 3 caracteres
+            </p>
+
+          </div>
+
+          <!-- MARCA -->
+          <div>
+
+            <label class="text-sm text-zinc-400 mb-2 block">
+              Marca
+            </label>
+
+            <input
+              type="text"
+              [(ngModel)]="nuevoProducto.marca"
+              name="marca"
+              required
+              #marca="ngModel"
+              placeholder="Ejemplo: ASUS"
+              class="w-full bg-zinc-950 border border-zinc-700 text-white p-4 rounded-2xl outline-none focus:border-violet-500 transition"
+            />
+
+            <p
+              *ngIf="marca.invalid && marca.touched"
+              class="text-red-400 text-sm mt-2"
+            >
+              La marca es obligatoria
+            </p>
+
+          </div>
+
+          <!-- CATEGORIA -->
+          <div>
+
+            <label class="text-sm text-zinc-400 mb-2 block">
+              Categoría
+            </label>
+
+            <input
+              type="text"
+              [(ngModel)]="nuevoProducto.categoria"
+              name="categoria"
+              required
+              #categoria="ngModel"
+              placeholder="Ejemplo: Electrónica"
+              class="w-full bg-zinc-950 border border-zinc-700 text-white p-4 rounded-2xl outline-none focus:border-violet-500 transition"
+            />
+
+          </div>
+
+          <!-- GRID -->
+          <div class="grid grid-cols-2 gap-4">
+
+            <!-- PRECIO -->
+            <div>
+
+              <label class="text-sm text-zinc-400 mb-2 block">
+                Precio
+              </label>
+
+              <input
+                type="number"
+                [(ngModel)]="nuevoProducto.precio"
+                name="precio"
+                required
+                min="1"
+                #precio="ngModel"
+                placeholder="$0"
+                class="w-full bg-zinc-950 border border-zinc-700 text-white p-4 rounded-2xl outline-none focus:border-violet-500 transition"
+              />
+
+              <p
+                *ngIf="precio.invalid && precio.touched"
+                class="text-red-400 text-sm mt-2"
+              >
+                Precio inválido
+              </p>
+
+            </div>
+
+            <!-- STOCK -->
+            <div>
+
+              <label class="text-sm text-zinc-400 mb-2 block">
+                Stock
+              </label>
+
+              <input
+                type="number"
+                [(ngModel)]="nuevoProducto.stock"
+                name="stock"
+                required
+                min="0"
+                #stock="ngModel"
+                placeholder="0"
+                class="w-full bg-zinc-950 border border-zinc-700 text-white p-4 rounded-2xl outline-none focus:border-violet-500 transition"
+              />
+
+            </div>
+
+          </div>
+
+          <!-- BOTON -->
+          <button
+            type="submit"
+            [disabled]="formProducto.invalid"
+            class="w-full bg-violet-600 hover:bg-violet-700 disabled:bg-zinc-700 disabled:cursor-not-allowed transition-all duration-300 text-white py-4 rounded-2xl font-semibold mt-4"
+          >
+            Guardar Producto
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
